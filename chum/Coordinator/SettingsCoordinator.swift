@@ -1,0 +1,21 @@
+//
+//  SettingsCoordinator.swift
+//  chum
+//
+//  Created by James Saeed on 02/04/2019.
+//  Copyright © 2019 James Saeed. All rights reserved.
+//
+
+import UIKit
+
+class SettingsCoordinator: Coordinator {
+    
+    var navigationController: UINavigationController
+    
+    init() {
+        // Construct nav bar
+        self.navigationController = UINavigationController()
+        self.navigationController.navigationBar.prefersLargeTitles = true
+        self.navigationController.navigationBar.tintColor = UIColor(named: "primary")
+    }
+}

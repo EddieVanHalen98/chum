@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  chum
 //
 //  Created by James Saeed on 31/03/2019.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ChatsViewController: UIViewController, Storyboarded {
+    
+    weak var coordinator: ChatsCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  chum
 //
 //  Created by James Saeed on 31/03/2019.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MatchesViewController: UICollectionViewController, Storyboarded {
+    
+    weak var coordinator: MatchesCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

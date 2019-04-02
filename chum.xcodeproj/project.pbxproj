@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23076A3422539CED001A9FDC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3322539CED001A9FDC /* Coordinator.swift */; };
+		23076A3B2253A1B9001A9FDC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3A2253A1B9001A9FDC /* AppCoordinator.swift */; };
+		23076A3D2253AD0A001A9FDC /* SetupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3C2253AD0A001A9FDC /* SetupCoordinator.swift */; };
+		23076A3F2253AD26001A9FDC /* MatchesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3E2253AD26001A9FDC /* MatchesCoordinator.swift */; };
+		23076A412253AD3E001A9FDC /* ChatsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A402253AD3E001A9FDC /* ChatsCoordinator.swift */; };
+		23076A432253AD56001A9FDC /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A422253AD56001A9FDC /* SettingsCoordinator.swift */; };
 		2321042022514B4E005326BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321041F22514B4E005326BA /* AppDelegate.swift */; };
-		2321042222514B4E005326BA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321042122514B4E005326BA /* FirstViewController.swift */; };
-		2321042422514B4E005326BA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321042322514B4E005326BA /* SecondViewController.swift */; };
+		2321042222514B4E005326BA /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321042122514B4E005326BA /* MatchesViewController.swift */; };
+		2321042422514B4E005326BA /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321042322514B4E005326BA /* ChatsViewController.swift */; };
 		2321042722514B4E005326BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2321042522514B4E005326BA /* Main.storyboard */; };
 		2321042922514B4F005326BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2321042822514B4F005326BA /* Assets.xcassets */; };
 		2321042C22514B4F005326BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2321042A22514B4F005326BA /* LaunchScreen.storyboard */; };
@@ -35,10 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23076A3322539CED001A9FDC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		23076A3A2253A1B9001A9FDC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		23076A3C2253AD0A001A9FDC /* SetupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCoordinator.swift; sourceTree = "<group>"; };
+		23076A3E2253AD26001A9FDC /* MatchesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinator.swift; sourceTree = "<group>"; };
+		23076A402253AD3E001A9FDC /* ChatsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCoordinator.swift; sourceTree = "<group>"; };
+		23076A422253AD56001A9FDC /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		2321041C22514B4E005326BA /* chum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2321041F22514B4E005326BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2321042122514B4E005326BA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		2321042322514B4E005326BA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2321042122514B4E005326BA /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		2321042322514B4E005326BA /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		2321042622514B4E005326BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2321042822514B4F005326BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2321042B22514B4F005326BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +88,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23076A3522539EBE001A9FDC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				23076A3322539CED001A9FDC /* Coordinator.swift */,
+				23076A3A2253A1B9001A9FDC /* AppCoordinator.swift */,
+				23076A3C2253AD0A001A9FDC /* SetupCoordinator.swift */,
+				23076A3E2253AD26001A9FDC /* MatchesCoordinator.swift */,
+				23076A402253AD3E001A9FDC /* ChatsCoordinator.swift */,
+				23076A422253AD56001A9FDC /* SettingsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		23076A3622539EC3001A9FDC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2321042122514B4E005326BA /* MatchesViewController.swift */,
+				2321042322514B4E005326BA /* ChatsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		23076A3722539EC8001A9FDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2321042A22514B4F005326BA /* LaunchScreen.storyboard */,
+				2321042522514B4E005326BA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23076A3822539ECC001A9FDC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		23076A3922539ED3001A9FDC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2321041322514B4E005326BA = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +157,13 @@
 			isa = PBXGroup;
 			children = (
 				2321041F22514B4E005326BA /* AppDelegate.swift */,
-				2321042122514B4E005326BA /* FirstViewController.swift */,
-				2321042322514B4E005326BA /* SecondViewController.swift */,
-				2321042522514B4E005326BA /* Main.storyboard */,
 				2321042822514B4F005326BA /* Assets.xcassets */,
-				2321042A22514B4F005326BA /* LaunchScreen.storyboard */,
 				2321042D22514B4F005326BA /* Info.plist */,
+				23076A3922539ED3001A9FDC /* Extension */,
+				23076A3822539ECC001A9FDC /* Service */,
+				23076A3722539EC8001A9FDC /* View */,
+				23076A3622539EC3001A9FDC /* Controller */,
+				23076A3522539EBE001A9FDC /* Coordinator */,
 			);
 			path = chum;
 			sourceTree = "<group>";
@@ -259,9 +317,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2321042422514B4E005326BA /* SecondViewController.swift in Sources */,
+				23076A412253AD3E001A9FDC /* ChatsCoordinator.swift in Sources */,
+				23076A3422539CED001A9FDC /* Coordinator.swift in Sources */,
+				2321042422514B4E005326BA /* ChatsViewController.swift in Sources */,
+				23076A3F2253AD26001A9FDC /* MatchesCoordinator.swift in Sources */,
+				23076A432253AD56001A9FDC /* SettingsCoordinator.swift in Sources */,
+				23076A3B2253A1B9001A9FDC /* AppCoordinator.swift in Sources */,
 				2321042022514B4E005326BA /* AppDelegate.swift in Sources */,
-				2321042222514B4E005326BA /* FirstViewController.swift in Sources */,
+				23076A3D2253AD0A001A9FDC /* SetupCoordinator.swift in Sources */,
+				2321042222514B4E005326BA /* MatchesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
