@@ -35,7 +35,7 @@ class AppCoordinator: Coordinator {
         // Initialise chats tab
         self.chatsCoordinator = ChatsCoordinator()
         let chatsViewController = chatsCoordinator.navigationController
-        matchesViewController.tabBarItem = UITabBarItem(title: "Matches", image: UIImage(named: "first"), tag: 1)
+        chatsViewController.tabBarItem = UITabBarItem(title: "Chats", image: UIImage(named: "first"), tag: 1)
         
         // Initialise settings tab
         self.settingsCoordinator = SettingsCoordinator()
@@ -43,7 +43,7 @@ class AppCoordinator: Coordinator {
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "first"), tag: 2)
         
         // Provides the app level coordinator to the screens that need it
-//        self.setupCoordinator.appCoordinator = self
+        self.setupCoordinator.appCoordinator = self
         
         // Construct the tab bar
         self.tabBarController.viewControllers = [matchesViewController, chatsViewController, settingsViewController]
@@ -52,5 +52,9 @@ class AppCoordinator: Coordinator {
     /// Open the setup screen
     func setup() {
         tabBarController.present(setupCoordinator.navigationController, animated: false, completion: nil)
+    }
+    
+    func goHome() {
+        tabBarController.dismiss(animated: true, completion: nil)
     }
 }

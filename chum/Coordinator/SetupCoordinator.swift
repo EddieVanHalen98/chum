@@ -10,6 +10,8 @@ import UIKit
 
 class SetupCoordinator: Coordinator {
     
+    weak var appCoordinator: AppCoordinator?
+    
     var navigationController: UINavigationController
  
     init() {
@@ -20,8 +22,30 @@ class SetupCoordinator: Coordinator {
         self.navigationController.interactivePopGestureRecognizer?.isEnabled = false
         
         // Initialise and present the start screen
-//        let vc = InitialViewController.instantiate()
-//        vc.coordinator = self
-//        navigationController.pushViewController(vc, animated: false)
+        let vc = LogInViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func askForDateOfBirth() {
+        let vc = AgeViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func askForPersonalityTraits() {
+        let vc = PersonalityViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func askForMusicGenres() {
+        let vc = MusicViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func finishSetup() {
+        appCoordinator?.goHome()
     }
 }

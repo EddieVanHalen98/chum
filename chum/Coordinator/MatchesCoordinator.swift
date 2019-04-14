@@ -23,4 +23,10 @@ class MatchesCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    func showMatch() {
+        let vc = DetailedMatchViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: AppCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        FirebaseApp.configure()
+        IQKeyboardManager.shared().isEnabled = true
         coordinatorConfiguration()
         
+        if !isLoggedIn() {
+            coordinator?.setup()
+        }
+        
         return true
+    }
+    
+    private func isLoggedIn() -> Bool {
+        return false
     }
     
     private func coordinatorConfiguration() {
