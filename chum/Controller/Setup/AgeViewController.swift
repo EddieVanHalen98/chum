@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import Magnetic
 
 class AgeViewController: UIViewController, Storyboarded {
 
     weak var coordinator: SetupCoordinator?
     
-    override func viewDidLoad() {
+	@IBOutlet weak var datePicker: UIDatePicker!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+	
+	@IBAction func nextButtonPressed(_ sender: Any) {
+		coordinator?.dateOfBirth = datePicker.date
+		coordinator?.askForPersonalityTraits()
+	}
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+}
+
+// MARK: - Functionality
+
+extension AgeViewController {
+	
+	func saveDateOfBirth() {
+		// TODO
+	}
 }

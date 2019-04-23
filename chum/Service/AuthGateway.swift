@@ -12,6 +12,10 @@ import FirebaseAuth
 class AuthGateway {
     
     static let shared = AuthGateway()
+	
+	func getUserId() -> String {
+		return Auth.auth().currentUser!.uid
+	}
     
     func createUser(email: String, password: String, completion: @escaping (_ error: Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in

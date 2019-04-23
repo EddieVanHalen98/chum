@@ -24,9 +24,9 @@ class MatchesViewController: UICollectionViewController, Storyboarded {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "matchCell", for: indexPath) as? MatchCell else { return UICollectionViewCell() }
         
-        let user = User(uid: "123456", name: "James Saeed", imageURL: URL(string: "http://jtsaeed.com/images/avatar.jpg")!)
-        cell.build(for: Match(rating: 8.6, user: user))
-        
+//        let user = User(uid: "123456", name: "James Saeed", imageURL: URL(string: "http://jtsaeed.com/images/avatar.jpg")!)
+//        cell.build(for: Match(rating: 8.6, user: user))
+		
         return cell
     }
 }

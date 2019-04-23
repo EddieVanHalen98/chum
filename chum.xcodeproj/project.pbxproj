@@ -27,6 +27,7 @@
 		235B2DDF225C899D00C9E7DF /* DataGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B2DDE225C899D00C9E7DF /* DataGateway.swift */; };
 		235B2DE3225C906C00C9E7DF /* DetailedMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */; };
 		235B2DE5225C9AF900C9E7DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */; };
+		238BB916226CF8310086B0CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BB915226CF8310086B0CD /* PersonalViewController.swift */; };
 		23C3CD7B22632A5E006FEC2C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */; };
 		23C3CD7E22633328006FEC2C /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7D22633328006FEC2C /* AgeViewController.swift */; };
 		23C3CD8022633343006FEC2C /* PersonalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7F22633343006FEC2C /* PersonalityViewController.swift */; };
@@ -81,6 +82,7 @@
 		235B2DDE225C899D00C9E7DF /* DataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGateway.swift; sourceTree = "<group>"; };
 		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchViewController.swift; sourceTree = "<group>"; };
 		235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		238BB915226CF8310086B0CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		23C3CD7D22633328006FEC2C /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		23C3CD7F22633343006FEC2C /* PersonalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */,
+				238BB915226CF8310086B0CD /* PersonalViewController.swift */,
 				23C3CD7D22633328006FEC2C /* AgeViewController.swift */,
 				23C3CD7F22633343006FEC2C /* PersonalityViewController.swift */,
 				23C3CD8122633355006FEC2C /* MusicViewController.swift */,
@@ -520,6 +523,7 @@
 				2321042422514B4E005326BA /* ChatsViewController.swift in Sources */,
 				2354C4742258A01900D5E2CA /* UIViewX.swift in Sources */,
 				23076A3F2253AD26001A9FDC /* MatchesCoordinator.swift in Sources */,
+				238BB916226CF8310086B0CD /* PersonalViewController.swift in Sources */,
 				23C3CD8222633355006FEC2C /* MusicViewController.swift in Sources */,
 				23076A432253AD56001A9FDC /* SettingsCoordinator.swift in Sources */,
 				23076A3B2253A1B9001A9FDC /* AppCoordinator.swift in Sources */,

@@ -10,6 +10,9 @@ PODS:
   - Firebase/Database (5.16.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.1.0)
+  - Firebase/Storage (5.16.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (= 3.1.0)
   - FirebaseAnalytics (5.5.0):
     - FirebaseCore (~> 5.2)
     - FirebaseInstanceID (~> 3.4)
@@ -35,6 +38,10 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
+  - FirebaseStorage (3.1.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -74,6 +81,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Storage
   - IQKeyboardManager
   - Kingfisher
   - Magnetic
@@ -87,6 +95,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -104,6 +113,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
   FirebaseDatabase: 23acb0c53cd4d4070a427b60100b2e4aaa97c45d
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
+  FirebaseStorage: 29075f874c2b3cf61e5221a62c4ceefc809e5412
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
@@ -113,6 +123,6 @@ SPEC CHECKSUMS:
   Magnetic: 4c8041c5f203bfbc2e047539f6ffeb93425f0767
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 015d58819b0f7d320963043e0dea61c41ca8e485
+PODFILE CHECKSUM: 82a9785e6d10f6260d424d43bca445942de29cc9
 
 COCOAPODS: 1.5.3

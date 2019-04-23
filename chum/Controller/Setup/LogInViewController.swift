@@ -41,7 +41,7 @@ class LogInViewController: UIViewController, Storyboarded {
         if let email = emailField.text, let password = passwordField.text {
             AuthGateway.shared.createUser(email: email, password: password) { (error) in
                 if error == nil {
-                    self.coordinator.askForDateOfBirth()
+					self.coordinator?.askForPersonalInfo()
                 } else {
                     print(error?.localizedDescription)
                 }

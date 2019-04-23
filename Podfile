@@ -9,6 +9,7 @@ target 'chum' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'Magnetic'
   pod 'Kingfisher'
   pod 'IQKeyboardManager'

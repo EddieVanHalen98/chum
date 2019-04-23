@@ -13,6 +13,13 @@ class SetupCoordinator: Coordinator {
     weak var appCoordinator: AppCoordinator?
     
     var navigationController: UINavigationController
+	
+	var firstName: String?
+	var lastName: String?
+	var imageURL: String?
+	var dateOfBirth: Date?
+	var personalityTraits: [String: Bool]?
+	var musicGenres: [String: Bool]?
  
     init() {
         // Construct nav bar
@@ -23,9 +30,16 @@ class SetupCoordinator: Coordinator {
         
         // Initialise and present the start screen
         let vc = LogInViewController.instantiate()
+//		let vc = PersonalityViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+	
+	func askForPersonalInfo() {
+		let vc = PersonalViewController.instantiate()
+		vc.coordinator = self
+		navigationController.pushViewController(vc, animated: true)
+	}
     
     func askForDateOfBirth() {
         let vc = AgeViewController.instantiate()
@@ -46,6 +60,7 @@ class SetupCoordinator: Coordinator {
     }
     
     func finishSetup() {
+		DataGateway.shared.createUser(AuthGateway.shared.getUserId(), firstName!, lastName!, imageURL!, dateOfBirth: dateOfBirth!, personalityTraits: personalityTraits!, musicGenres: musicGenres!)
         appCoordinator?.goHome()
     }
 }
