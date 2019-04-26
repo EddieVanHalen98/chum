@@ -23,24 +23,24 @@ class AppCoordinator: Coordinator {
         // Construct nav bar
         self.navigationController = UINavigationController()
         self.tabBarController = UITabBarController()
-        self.tabBarController.tabBar.tintColor = UIColor(named: "app")
+        self.tabBarController.tabBar.tintColor = UIColor(named: "primary")
         
         self.setupCoordinator = SetupCoordinator()
         
         // Initialise matches tab
         self.matchesCoordinator = MatchesCoordinator()
         let matchesViewController = matchesCoordinator.navigationController
-        matchesViewController.tabBarItem = UITabBarItem(title: "Matches", image: UIImage(named: "first"), tag: 0)
+        matchesViewController.tabBarItem = UITabBarItem(title: "Matches", image: UIImage(named: "people"), tag: 0)
         
         // Initialise chats tab
         self.chatsCoordinator = ChatsCoordinator()
         let chatsViewController = chatsCoordinator.navigationController
-        chatsViewController.tabBarItem = UITabBarItem(title: "Chats", image: UIImage(named: "first"), tag: 1)
+        chatsViewController.tabBarItem = UITabBarItem(title: "Chats", image: UIImage(named: "chat"), tag: 1)
         
         // Initialise settings tab
         self.settingsCoordinator = SettingsCoordinator()
         let settingsViewController = settingsCoordinator.navigationController
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "first"), tag: 2)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
         
         // Provides the app level coordinator to the screens that need it
         self.setupCoordinator.appCoordinator = self
