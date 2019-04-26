@@ -29,7 +29,7 @@ class LogInViewController: UIViewController, Storyboarded {
         if let email = emailField.text, let password = passwordField.text {
             AuthGateway.shared.logIn(email: email, password: password) { (error) in
                 if error == nil {
-                    self.coordinator?.finishSetup()
+                    self.coordinator?.appCoordinator?.goHome()
                 } else {
                     print(error?.localizedDescription)
                 }

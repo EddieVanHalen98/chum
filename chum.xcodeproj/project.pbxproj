@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23051DE9226F51FB00680C4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23051DE8226F51FB00680C4C /* SettingsViewController.swift */; };
 		23076A3422539CED001A9FDC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3322539CED001A9FDC /* Coordinator.swift */; };
 		23076A3B2253A1B9001A9FDC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3A2253A1B9001A9FDC /* AppCoordinator.swift */; };
 		23076A3D2253AD0A001A9FDC /* SetupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23076A3C2253AD0A001A9FDC /* SetupCoordinator.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23051DE8226F51FB00680C4C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		23076A3322539CED001A9FDC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		23076A3A2253A1B9001A9FDC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		23076A3C2253AD0A001A9FDC /* SetupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCoordinator.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		2354C4752258A04B00D5E2CA /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		2354C4782258A06800D5E2CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		235B2DDE225C899D00C9E7DF /* DataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGateway.swift; sourceTree = "<group>"; };
-		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchViewController.swift; sourceTree = "<group>"; };
+		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedMatchViewController.swift; path = ../View/DetailedMatchViewController.swift; sourceTree = "<group>"; };
 		235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		238BB915226CF8310086B0CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +160,9 @@
 			children = (
 				23C3CD7C2263331A006FEC2C /* Setup */,
 				2321042122514B4E005326BA /* MatchesViewController.swift */,
+				235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */,
 				2321042322514B4E005326BA /* ChatsViewController.swift */,
+				23051DE8226F51FB00680C4C /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,7 +174,6 @@
 				2321042522514B4E005326BA /* Main.storyboard */,
 				2354C4732258A01900D5E2CA /* UIViewX.swift */,
 				2354C4752258A04B00D5E2CA /* MatchCell.swift */,
-				235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 			files = (
 				23C3CD7B22632A5E006FEC2C /* LogInViewController.swift in Sources */,
 				23076A412253AD3E001A9FDC /* ChatsCoordinator.swift in Sources */,
+				23051DE9226F51FB00680C4C /* SettingsViewController.swift in Sources */,
 				23076A3422539CED001A9FDC /* Coordinator.swift in Sources */,
 				2321042422514B4E005326BA /* ChatsViewController.swift in Sources */,
 				2354C4742258A01900D5E2CA /* UIViewX.swift in Sources */,

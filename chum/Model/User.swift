@@ -11,21 +11,20 @@ import Foundation
 struct User {
     
     let uid: String
-    let name: String
-	let dateOfBirth: Date
-    let imageURL: URL
+	var firstName: String
+	var lastName: String
+	var imageURL: URL
+	var dateOfBirth: String
+	var personalityTraits: [String: Bool]
+	var musicGenres: [String: Bool]
 }
 
 struct Match {
-    
-    let rating: Double
-    let user: User
-}
-
-enum PersonalityTrait: String {
-	case test
-}
-
-enum MusicGenre: String {
-	case test
+	
+    let currentUser: User
+	let matchedUser: User
+	
+	var rating: Double {
+		return 8.6
+	}
 }

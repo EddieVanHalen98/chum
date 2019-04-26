@@ -11,22 +11,39 @@ import UIKit
 class MatchesViewController: UICollectionViewController, Storyboarded {
     
     weak var coordinator: MatchesCoordinator?
+	
+	var currentUser: User!
+	var users = [User]() {
+		didSet {
+			collectionView.reloadData()
+		}
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+		
+		loadUsers()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return users.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "matchCell", for: indexPath) as? MatchCell else { return UICollectionViewCell() }
-        
-//        let user = User(uid: "123456", name: "James Saeed", imageURL: URL(string: "http://jtsaeed.com/images/avatar.jpg")!)
-//        cell.build(for: Match(rating: 8.6, user: user))
+		
+		cell.build(for: Match(currentUser: currentUser, matchedUser: users[indexPath.row]))
 		
         return cell
     }
+}
+
+// MARK: - Functionality
+
+extension MatchesViewController {
+	
+	func loadUsers() {
+		DataGateway.shared.getCurrentUser { (user) in self.currentUser = user }
+		DataGateway.shared.getUsers { (users) in self.users = users }
+	}
 }

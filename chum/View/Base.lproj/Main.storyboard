@@ -438,6 +438,31 @@ techno to jazz!</string>
             </objects>
             <point key="canvasLocation" x="663" y="335"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1SH-aQ-mVA">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="7MJ-hd-V9m" customClass="SettingsViewController" customModule="chum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gjt-RE-zAs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuY-Ds-G4U">
+                                <rect key="frame" x="163" y="391" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOut:" destination="7MJ-hd-V9m" eventType="touchUpInside" id="gC6-6D-Npy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="W8F-4d-F7N"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Xx-Mc-TKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="1021"/>
+        </scene>
         <!--Personality View Controller-->
         <scene sceneID="OIy-jU-eTS">
             <objects>

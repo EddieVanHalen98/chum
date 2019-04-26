@@ -21,15 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         coordinatorConfiguration()
         
-        if !isLoggedIn() {
+        if !AuthGateway.shared.isLoggedIn() {
             coordinator?.setup()
         }
         
         return true
-    }
-    
-    private func isLoggedIn() -> Bool {
-        return false
     }
     
     private func coordinatorConfiguration() {

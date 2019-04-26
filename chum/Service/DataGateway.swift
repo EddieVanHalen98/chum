@@ -30,9 +30,40 @@ class DataGateway {
 		REF_USERS.child(uid).child("musicGenres").updateChildValues(musicGenres)
 	}
 	
-	func getUsers(completion: @escaping (_ users: [User]) -> ()) {
-		REF_USERS.observeSingleEvent(of: .value) { (snapshot) in
+	func getCurrentUser(completion: @escaping (_ user: User) -> ()) {
+		let uid = AuthGateway.shared.getUserId()
+		
+		REF_USERS.child(uid).observeSingleEvent(of: .value) { (snapshot) in
+			guard let firstName = snapshot.childSnapshot(forPath: "firstName").value as? String else { return }
+			guard let lastName = snapshot.childSnapshot(forPath: "lastName").value as? String else { return }
+			guard let imageURL = snapshot.childSnapshot(forPath: "imageURL").value as? String else { return }
+			guard let dateOfBirth = snapshot.childSnapshot(forPath: "dateOfBirth").value as? String else { return }
+			guard let personalityTraits = snapshot.childSnapshot(forPath: "personalityTraits").value as? [String: Bool] else { return }
+			guard let musicGenres = snapshot.childSnapshot(forPath: "musicGenres").value as? [String: Bool] else { return }
 			
+			completion(User(uid: uid, firstName: firstName, lastName: lastName, imageURL: URL(string: imageURL)!, dateOfBirth: dateOfBirth, personalityTraits: personalityTraits, musicGenres: musicGenres))
+		}
+	}
+	
+	func getUsers(completion: @escaping (_ users: [User]) -> ()) {
+		var users = [User]()
+		
+		REF_USERS.observeSingleEvent(of: .value) { (snapshot) in
+			guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
+			
+			for user in snapshot {
+				let id = user.key
+				guard let firstName = user.childSnapshot(forPath: "firstName").value as? String else { continue }
+				guard let lastName = user.childSnapshot(forPath: "lastName").value as? String else { continue }
+				guard let imageURL = user.childSnapshot(forPath: "imageURL").value as? String else { continue }
+				guard let dateOfBirth = user.childSnapshot(forPath: "dateOfBirth").value as? String else { continue }
+				guard let personalityTraits = user.childSnapshot(forPath: "personalityTraits").value as? [String: Bool] else { continue }
+				guard let musicGenres = user.childSnapshot(forPath: "musicGenres").value as? [String: Bool] else { continue }
+				
+				users.append(User(uid: id, firstName: firstName, lastName: lastName, imageURL: URL(string: imageURL)!, dateOfBirth: dateOfBirth, personalityTraits: personalityTraits, musicGenres: musicGenres))
+			}
+			
+			completion(users)
 		}
 	}
 	

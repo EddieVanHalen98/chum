@@ -16,6 +16,6 @@ class MatchCell: UICollectionViewCell {
     
     func build(for match: Match) {
         ratingLabel.text = "\(match.rating)"
-        profileImage.kf.setImage(with: match.user.imageURL)
+        profileImage.kf.setImage(with: match.matchedUser.imageURL)
     }
 }

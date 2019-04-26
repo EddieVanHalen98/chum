@@ -16,6 +16,10 @@ class AuthGateway {
 	func getUserId() -> String {
 		return Auth.auth().currentUser!.uid
 	}
+	
+	func isLoggedIn() -> Bool {
+		return Auth.auth().currentUser != nil
+	}
     
     func createUser(email: String, password: String, completion: @escaping (_ error: Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -28,4 +32,10 @@ class AuthGateway {
             completion(error)
         }
     }
+	
+	func logOut() {
+		do {
+			try Auth.auth().signOut()
+		} catch _ { }
+	}
 }
