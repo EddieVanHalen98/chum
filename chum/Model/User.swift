@@ -24,7 +24,32 @@ struct Match {
     let currentUser: User
 	let matchedUser: User
 	
-	var rating: Double {
-		return 8.6
+	var rating: String {
+		if let prediction = try? RatingPredictor().prediction(personality: commonPersonalityTraits(), music: commonMusicGenres()) {
+			let rating = (prediction.rating - 1).rounded(toPlaces: 1)
+			return (rating >= 10) ? "10" : "\(rating)"
+		} else {
+			return "0.0"
+		}
+	}
+	
+	private func commonPersonalityTraits() -> Double {
+		var count = 0.0
+		for key in currentUser.personalityTraits.keys {
+			if currentUser.personalityTraits[key]! && matchedUser.personalityTraits[key]! {
+				count += 1
+			}
+		}
+		return count
+	}
+	
+	private func commonMusicGenres() -> Double {
+		var count = 0.0
+		for key in currentUser.musicGenres.keys {
+			if currentUser.musicGenres[key]! && matchedUser.musicGenres[key]! {
+				count += 1
+			}
+		}
+		return count
 	}
 }

@@ -29,6 +29,8 @@
 		235B2DE3225C906C00C9E7DF /* DetailedMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */; };
 		235B2DE5225C9AF900C9E7DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */; };
 		238BB916226CF8310086B0CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BB915226CF8310086B0CD /* PersonalViewController.swift */; };
+		238D9627227317E300B8A03C /* RatingPredictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 238D9626227317E300B8A03C /* RatingPredictor.mlmodel */; };
+		238D962922731A0700B8A03C /* Ext+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D962822731A0700B8A03C /* Ext+Number.swift */; };
 		23C3CD7B22632A5E006FEC2C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */; };
 		23C3CD7E22633328006FEC2C /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7D22633328006FEC2C /* AgeViewController.swift */; };
 		23C3CD8022633343006FEC2C /* PersonalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3CD7F22633343006FEC2C /* PersonalityViewController.swift */; };
@@ -85,6 +87,8 @@
 		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedMatchViewController.swift; path = ../View/DetailedMatchViewController.swift; sourceTree = "<group>"; };
 		235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		238BB915226CF8310086B0CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		238D9626227317E300B8A03C /* RatingPredictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RatingPredictor.mlmodel; sourceTree = "<group>"; };
+		238D962822731A0700B8A03C /* Ext+Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Number.swift"; sourceTree = "<group>"; };
 		23C3CD7A22632A5E006FEC2C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		23C3CD7D22633328006FEC2C /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		23C3CD7F22633343006FEC2C /* PersonalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		23076A3922539ED3001A9FDC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				238D962822731A0700B8A03C /* Ext+Number.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 		2354C4772258A05900D5E2CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				238D9626227317E300B8A03C /* RatingPredictor.mlmodel */,
 				2354C4782258A06800D5E2CA /* User.swift */,
 			);
 			path = Model;
@@ -520,6 +526,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238D9627227317E300B8A03C /* RatingPredictor.mlmodel in Sources */,
+				238D962922731A0700B8A03C /* Ext+Number.swift in Sources */,
 				23C3CD7B22632A5E006FEC2C /* LogInViewController.swift in Sources */,
 				23076A412253AD3E001A9FDC /* ChatsCoordinator.swift in Sources */,
 				23051DE9226F51FB00680C4C /* SettingsViewController.swift in Sources */,
