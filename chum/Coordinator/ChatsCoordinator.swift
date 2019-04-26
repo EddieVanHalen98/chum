@@ -23,4 +23,12 @@ class ChatsCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+	
+	func openConversation(for sender: User, with recipient: User) {
+		let vc = ConversationViewController.instantiate()
+		vc.coordinator = self
+		vc.sender = sender
+		vc.recipient = recipient
+		navigationController.pushViewController(vc, animated: true)
+	}
 }

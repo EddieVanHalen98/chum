@@ -14,7 +14,7 @@ class AuthGateway {
     static let shared = AuthGateway()
 	
 	func getUserId() -> String {
-		return Auth.auth().currentUser!.uid
+		return Auth.auth().currentUser?.uid ?? " "
 	}
 	
 	func isLoggedIn() -> Bool {

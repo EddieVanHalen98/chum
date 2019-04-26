@@ -53,6 +53,8 @@ class DataGateway {
 			
 			for user in snapshot {
 				let id = user.key
+//				if id == AuthGateway.shared.getUserId() { continue }
+				
 				guard let firstName = user.childSnapshot(forPath: "firstName").value as? String else { continue }
 				guard let lastName = user.childSnapshot(forPath: "lastName").value as? String else { continue }
 				guard let imageURL = user.childSnapshot(forPath: "imageURL").value as? String else { continue }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MessageKit
 
 struct User {
     
@@ -17,6 +18,10 @@ struct User {
 	var dateOfBirth: String
 	var personalityTraits: [String: Bool]
 	var musicGenres: [String: Bool]
+	
+	func toSender() -> Sender {
+		return Sender(id: uid, displayName: "\(firstName) \(lastName)")
+	}
 }
 
 struct Match {

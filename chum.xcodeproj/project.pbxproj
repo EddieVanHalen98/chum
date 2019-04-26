@@ -28,6 +28,8 @@
 		235B2DDF225C899D00C9E7DF /* DataGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B2DDE225C899D00C9E7DF /* DataGateway.swift */; };
 		235B2DE3225C906C00C9E7DF /* DetailedMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */; };
 		235B2DE5225C9AF900C9E7DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */; };
+		2384D9F622732D5A004FD6E1 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384D9F522732D5A004FD6E1 /* ConversationViewController.swift */; };
+		2384D9F822732DA4004FD6E1 /* ChatGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384D9F722732DA4004FD6E1 /* ChatGateway.swift */; };
 		238BB916226CF8310086B0CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238BB915226CF8310086B0CD /* PersonalViewController.swift */; };
 		238D9627227317E300B8A03C /* RatingPredictor.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 238D9626227317E300B8A03C /* RatingPredictor.mlmodel */; };
 		238D962922731A0700B8A03C /* Ext+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D962822731A0700B8A03C /* Ext+Number.swift */; };
@@ -84,8 +86,10 @@
 		2354C4752258A04B00D5E2CA /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		2354C4782258A06800D5E2CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		235B2DDE225C899D00C9E7DF /* DataGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGateway.swift; sourceTree = "<group>"; };
-		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedMatchViewController.swift; path = ../View/DetailedMatchViewController.swift; sourceTree = "<group>"; };
+		235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchViewController.swift; sourceTree = "<group>"; };
 		235B2DE4225C9AF900C9E7DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2384D9F522732D5A004FD6E1 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		2384D9F722732DA4004FD6E1 /* ChatGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGateway.swift; sourceTree = "<group>"; };
 		238BB915226CF8310086B0CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		238D9626227317E300B8A03C /* RatingPredictor.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RatingPredictor.mlmodel; sourceTree = "<group>"; };
 		238D962822731A0700B8A03C /* Ext+Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Number.swift"; sourceTree = "<group>"; };
@@ -163,9 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				23C3CD7C2263331A006FEC2C /* Setup */,
-				2321042122514B4E005326BA /* MatchesViewController.swift */,
-				235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */,
-				2321042322514B4E005326BA /* ChatsViewController.swift */,
+				2384D9F322732ABD004FD6E1 /* Matches */,
+				2384D9F422732AD1004FD6E1 /* Chat */,
 				23051DE8226F51FB00680C4C /* SettingsViewController.swift */,
 			);
 			path = Controller;
@@ -187,6 +190,7 @@
 			children = (
 				235B2DDE225C899D00C9E7DF /* DataGateway.swift */,
 				23C3CD8322633565006FEC2C /* AuthGateway.swift */,
+				2384D9F722732DA4004FD6E1 /* ChatGateway.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -263,6 +267,24 @@
 				2354C4782258A06800D5E2CA /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2384D9F322732ABD004FD6E1 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				2321042122514B4E005326BA /* MatchesViewController.swift */,
+				235B2DE2225C906C00C9E7DF /* DetailedMatchViewController.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		2384D9F422732AD1004FD6E1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2321042322514B4E005326BA /* ChatsViewController.swift */,
+				2384D9F522732D5A004FD6E1 /* ConversationViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		23C3CD7C2263331A006FEC2C /* Setup */ = {
@@ -428,11 +450,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-chum/Pods-chum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Magnetic/Magnetic.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -440,11 +468,17 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnetic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -528,6 +562,7 @@
 			files = (
 				238D9627227317E300B8A03C /* RatingPredictor.mlmodel in Sources */,
 				238D962922731A0700B8A03C /* Ext+Number.swift in Sources */,
+				2384D9F622732D5A004FD6E1 /* ConversationViewController.swift in Sources */,
 				23C3CD7B22632A5E006FEC2C /* LogInViewController.swift in Sources */,
 				23076A412253AD3E001A9FDC /* ChatsCoordinator.swift in Sources */,
 				23051DE9226F51FB00680C4C /* SettingsViewController.swift in Sources */,
@@ -549,6 +584,7 @@
 				23C3CD8022633343006FEC2C /* PersonalityViewController.swift in Sources */,
 				23C3CD8422633565006FEC2C /* AuthGateway.swift in Sources */,
 				2354C4792258A06800D5E2CA /* User.swift in Sources */,
+				2384D9F822732DA4004FD6E1 /* ChatGateway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
