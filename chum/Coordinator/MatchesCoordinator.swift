@@ -23,6 +23,15 @@ class MatchesCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+	
+	func showRequestAlert(for targetUser: User) {
+		let alert = UIAlertController(title: "Send match request", message: "Send a match request to \(targetUser.firstName)?", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+			DataGateway.shared.sendMatchRequest(to: targetUser)
+		}))
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		navigationController.present(alert, animated: true, completion: nil)
+	}
     
     func showMatch() {
         let vc = DetailedMatchViewController.instantiate()

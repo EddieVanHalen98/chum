@@ -34,10 +34,16 @@ class MatchesViewController: UICollectionViewController, Storyboarded {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "matchCell", for: indexPath) as? MatchCell else { return UICollectionViewCell() }
 		
-		cell.build(for: Match(currentUser: currentUser, matchedUser: users[indexPath.row]))
+		if currentUser != nil {
+			cell.build(for: Match(currentUser: currentUser, matchedUser: users[indexPath.row]))
+		}
 		
         return cell
     }
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		coordinator?.showRequestAlert(for: users[indexPath.row])
+	}
 }
 
 // MARK: - Functionality

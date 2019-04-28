@@ -38,4 +38,8 @@ class AuthGateway {
 			try Auth.auth().signOut()
 		} catch _ { }
 	}
+	
+	func deleteAccount() {
+		Auth.auth().currentUser?.delete(completion: nil)
+	}
 }

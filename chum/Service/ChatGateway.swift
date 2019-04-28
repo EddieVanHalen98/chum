@@ -16,21 +16,12 @@ class ChatGateway {
 	
 	static let shared = ChatGateway()
 	
+	func createNewChat(forMembers members: [User]) {
+		NEW_DB_REF.collection("threads").addDocument(data: [members[0].uid: true, members[1].uid: true])
+	}
+	
 	func identifyConversationId(forMembers members: [User], completion: @escaping (_ conversationId: String) -> ()) {
 		NEW_DB_REF.collection("threads").getDocuments { (snapshot, error) in
-			for document in snapshot!.documents {
-				let conversationId = document.documentID
-				guard let firstPerson = document.data()[members[0].uid] as? Bool else { return }
-				guard let secondPerson = document.data()[members[1].uid] as? Bool else { return }
-				
-				if firstPerson && secondPerson {
-					completion(conversationId)
-					return
-				}
-			}
-			
-			NEW_DB_REF.collection("threads").addDocument(data: [members[0].uid : true, members[1].uid : true])
-			
 			for document in snapshot!.documents {
 				let conversationId = document.documentID
 				guard let firstPerson = document.data()[members[0].uid] as? Bool else { return }

@@ -261,7 +261,6 @@
         <!--Matches-->
         <scene sceneID="DeH-OE-t3y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I8Z-Kw-XXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController storyboardIdentifier="MatchesViewController" title="Matches" id="1rC-vZ-HRg" customClass="MatchesViewController" customModule="chum" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JR4-IY-E3Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -284,7 +283,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCd-Td-Ngj" customClass="UIViewX" customModule="chum" customModuleProvider="target">
                                             <rect key="frame" x="12" y="12" width="144" height="144"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Fb8-d7-XWy" customClass="UIImageViewX" customModule="chum" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Fb8-d7-XWy" customClass="UIImageViewX" customModule="chum" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userDefinedRuntimeAttributes>
@@ -326,7 +325,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBM-Po-p4P">
                                                         <rect key="frame" x="10" y="5" width="28" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                        <color key="textColor" red="0.031372549019607843" green="0.49803921568627452" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.0" green="0.41176470588235292" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -371,6 +370,7 @@
                         </connections>
                     </collectionView>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8Z-Kw-XXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="663.20000000000005" y="-345.81280788177344"/>
         </scene>
@@ -489,6 +489,14 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logOut:" destination="7MJ-hd-V9m" eventType="touchUpInside" id="gC6-6D-Npy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtF-D0-kgv">
+                                <rect key="frame" x="134" y="429" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteAccount:" destination="7MJ-hd-V9m" eventType="touchUpInside" id="th9-0v-0CF"/>
                                 </connections>
                             </button>
                         </subviews>

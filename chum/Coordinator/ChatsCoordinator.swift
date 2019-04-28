@@ -24,6 +24,20 @@ class ChatsCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
 	
+	func showRequestAlert(for currentUser: User, with targetUser: User) {
+		let alert = UIAlertController(title: "Match request", message: "\(targetUser.firstName) has sent you a match request, would you like to accept or decline?", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { (action) in
+			DataGateway.shared.declineMatchRequest(from: targetUser)
+		}))
+		alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
+			DataGateway.shared.acceptMatchRequest(from: targetUser)
+			ChatGateway.shared.createNewChat(forMembers: [currentUser, targetUser])
+			self.openConversation(for: currentUser, with: targetUser)
+		}))
+		navigationController.present(alert, animated: true, completion: nil)
+	}
+	
 	func openConversation(for sender: User, with recipient: User) {
 		let vc = ConversationViewController.instantiate()
 		vc.coordinator = self

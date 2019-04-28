@@ -16,12 +16,17 @@ class ChatsViewController: UITableViewController, Storyboarded {
 	var users = [User]() {
 		didSet { tableView.reloadData() }
 	}
+	var statuses = [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		
 		loadUsers()
-    }
+	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return users.count
@@ -34,8 +39,13 @@ class ChatsViewController: UITableViewController, Storyboarded {
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let user = users[indexPath.row]
-		coordinator?.openConversation(for: currentUser, with: user)
+		let targetUser = users[indexPath.row]
+		
+		if statuses[targetUser.uid] == "matched" {
+			coordinator?.openConversation(for: currentUser, with: targetUser)
+		} else if statuses[targetUser.uid] == "request" {
+			coordinator?.showRequestAlert(for: currentUser, with: targetUser)
+		}
 	}
 }
 
@@ -45,6 +55,12 @@ extension ChatsViewController {
 	
 	func loadUsers() {
 		DataGateway.shared.getCurrentUser { (user) in self.currentUser = user }
-		DataGateway.shared.getUsers { (users) in self.users = users }
+		
+		DataGateway.shared.getMatchStatuses { (statuses) in
+			self.statuses = statuses
+			DataGateway.shared.getUsers { (users) in
+				self.users = users.filter{ statuses.keys.contains($0.uid) }
+			}
+		}
 	}
 }

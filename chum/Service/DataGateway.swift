@@ -16,7 +16,7 @@ class DataGateway {
 	
 	private var REF_BASE: DatabaseReference { return Database.database().reference() }
 	private var REF_USERS: DatabaseReference { return Database.database().reference().child("users") }
-	private var REF_CHATS: DatabaseReference { return Database.database().reference().child("chats") }
+	private var REF_MATCHES: DatabaseReference { return Database.database().reference().child("matches") }
 	
 	/// Creates a new user within the database with the required sign up info
 	func createUser(_ uid: String, _ firstName: String, _ lastName: String, _ imageURL: String, dateOfBirth: Date, personalityTraits: [String: Bool], musicGenres: [String: Bool]) {
@@ -53,7 +53,7 @@ class DataGateway {
 			
 			for user in snapshot {
 				let id = user.key
-//				if id == AuthGateway.shared.getUserId() { continue }
+				if id == AuthGateway.shared.getUserId() { continue }
 				
 				guard let firstName = user.childSnapshot(forPath: "firstName").value as? String else { continue }
 				guard let lastName = user.childSnapshot(forPath: "lastName").value as? String else { continue }
@@ -74,6 +74,36 @@ class DataGateway {
 		let ref = Storage.storage().reference().child("\(uid).png")
 		ref.putData(image.pngData()!, metadata: nil) { (metadata, error) in
 			ref.downloadURL(completion: { (url, _) in completion(url?.absoluteString) })
+		}
+	}
+	
+	func sendMatchRequest(to targetUser: User) {
+		REF_MATCHES.child(targetUser.uid).child(AuthGateway.shared.getUserId()).updateChildValues(["status": "request"])
+	}
+	
+	func acceptMatchRequest(from targetUser: User) {
+		REF_MATCHES.child(AuthGateway.shared.getUserId()).child(targetUser.uid).updateChildValues(["status": "matched"])
+		REF_MATCHES.child(targetUser.uid).child(AuthGateway.shared.getUserId()).updateChildValues(["status": "matched"])
+	}
+	
+	func declineMatchRequest(from targetUser: User) {
+		REF_MATCHES.child(AuthGateway.shared.getUserId()).child(targetUser.uid).removeValue()
+	}
+	
+	func getMatchStatuses(completion: @escaping (_ statuses: [String: String]) -> ()) {
+		var statuses = [String: String]()
+		
+		REF_MATCHES.child(AuthGateway.shared.getUserId()).observeSingleEvent(of: .value) { (snapshot) in
+			guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else { return }
+			
+			for user in snapshot {
+				let id = user.key
+				guard let status = user.childSnapshot(forPath: "status").value as? String else { continue }
+				
+				if status != "waiting" { statuses[id] = status }
+			}
+			
+			completion(statuses)
 		}
 	}
 }

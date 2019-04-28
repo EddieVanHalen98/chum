@@ -21,4 +21,8 @@ class SettingsViewController: UIViewController, Storyboarded {
 	@IBAction func logOut(_ sender: Any) {
 		AuthGateway.shared.logOut()
 	}
+	
+	@IBAction func deleteAccount(_ sender: Any) {
+		AuthGateway.shared.deleteAccount()
+	}
 }
